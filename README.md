@@ -1,23 +1,5 @@
 # docker-inurlbr
 
-### Developers
-
-```
-----------------------------------------------
-                Original Version
-----------------------------------------------
-  [+] AUTOR:        googleINURL
-  [+] EMAIL:        inurlbr@gmail.com
-  [+] Blog:         http://blog.inurl.com.br
-----------------------------------------------
-                Docker Version
-----------------------------------------------
-  [+] AUTOR:        Gabriel Dutra (c0olr00t)
-  [+] EMAIL:        gabrieldmdutra@gmail.com
-  [+] LINKEDIN:     linkedin.com/in/gmdutra/
-----------------------------------------------
-```
-
 >Advanced search in search engines, enables analysis provided to exploit GET / POST capturing emails & urls, with an internal custom validation junction for each target / url found.
 ```
    +-----------------------------------------------------------------------------+
@@ -536,3 +518,20 @@ docker exec --name inurlbr ./inurlbr.php --dork-file 'dorksCGI.txt' -s output.tx
 docker exec --name inurlbr ./inurlbr.php --dork-file 'dorks_Wordpress_revslider.txt' -s output.txt -q 1,2,6,4,5,9,7,8  --sub-file 'xpls_Arbitrary_File_Download.txt'  
 ```
 
+### Developers
+
+```
+----------------------------------------------
+                Original Version
+----------------------------------------------
+  [+] AUTOR:        googleINURL
+  [+] EMAIL:        inurlbr@gmail.com
+  [+] Blog:         http://blog.inurl.com.br
+----------------------------------------------
+                Docker Version
+----------------------------------------------
+  [+] AUTOR:        Gabriel Dutra (c0olr00t)
+  [+] EMAIL:        gabrieldmdutra@gmail.com
+  [+] LINKEDIN:     linkedin.com/in/gmdutra/
+----------------------------------------------
+```
